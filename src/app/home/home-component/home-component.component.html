@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="search-menu">
+          <input type="text" name='searchorg' class="form-control" [(ngModel)]="searchName" placeholder="Search User By First Name">
+      </div>
+  </div>
+    <div class="col-md-12 user-container" *ngFor="let item of userArray | userListFilter: searchName; let i = index;">
+      <div class="user-inner-container">
+        Name : {{item.user.name.title}}. {{item.user.name.first | titlecase}} {{item.user.name.last | titlecase }}<br>
+        Gender : {{item.user.gender}}<br>
+        Email  :{{item.user.email}}<br>
+        Phone  :{{item.user.phone}}
+      </div>
+     
+     
+    </div>
+  </div>
+</div>
